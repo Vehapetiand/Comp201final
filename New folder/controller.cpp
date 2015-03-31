@@ -4,9 +4,8 @@
 using namespace std;
 
 Controller::Controller() {
-	
     model = new Model();
-    view = new View("Game", 1080, 768);
+    view = new View("Game", 1024, 768);
 }
 
 Controller::~Controller() {
@@ -55,5 +54,3 @@ void Controller::loop() {
     view->show(model);
     SDL_Delay(3000);
 }
-
-
