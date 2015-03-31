@@ -12,6 +12,7 @@ public:
     ~Model();
     // Is the game over?
     bool gameOver();
+
     // TODO: Put your stuff here
 };
 
