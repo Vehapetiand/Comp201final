@@ -34,13 +34,7 @@ View::View(string title, int width, int height) {
         return;
     }
     // Load assets
-	Main_idle = load("assets/Main_idle.png");
-	Main_walk1 = load("assets/Main_walk1.png");
-	Main_walk2 = load("assets/Main_walk2.png");
-	Main_walk3 = load("assets/Main_walk3.png");
-	Main_jump = load("assets/Main_jump.png");
-	
-	
+//    snake = load("assets/snake.png");
 //    music = Mix_LoadMUS("assets/2Inventions_-_Johaness_Gilther_-_Don_t_leave_me.mp3");
 //    if (music != NULL) {
 //       Mix_PlayMusic( music, -1 );
@@ -53,7 +47,7 @@ View::View(string title, int width, int height) {
 View::~View() {
     SDL_DestroyWindow(window);
     IMG_Quit();
-    SDL_Quit(); 
+    SDL_Quit();
 }
 
 /**
@@ -68,7 +62,7 @@ SDL_Surface* View::load(char * path) {
     }
     // Convert surface to screen format
     optimizedSurface = SDL_ConvertSurface( loadedSurface, screen->format, 0 );
-   
+    
     // Get rid of old loaded surface
     SDL_FreeSurface( loadedSurface );
     
@@ -78,13 +72,9 @@ SDL_Surface* View::load(char * path) {
 void View::show(Model * model) {
 
     SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format,
-       255, 255, 255));
-	
-	//SDL_BlitSurface(Main_idle,NULL,screen,NULL);	use sdlfillrect
-SDL_FillRect(screen, Main_idle, SDL_MapRGB(screen->format, 255,255,255 ));	
+        0x00, 0x00, 0x00));
 
     // Probably call SDL_FillRect or SDL_BlitSurface a bunch here :-)
-//	 SDL_FillRect(screen, NULL, ,NULL);
-	 
+
     SDL_UpdateWindowSurface(window);
 }
