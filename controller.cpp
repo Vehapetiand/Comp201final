@@ -67,20 +67,20 @@ void person::person()
 };
 void person::move()
 {
-    //Move the dot left or right
+    //Move the person left or right
     posX += velX;
 
-    //If the dot went too far to the left or right
+    //If the person went too far to the left or right
     if( ( posX < 0 ) || ( posX + person_height > screen_width ) )
     {
         //Move back
         posX -= velX;
     }
 
-    //Move the dot up or down
+    //Move the person up or down
     posY += velY;
 
-    //If the dot went too far up or down
+    //If the person went too far up or down
     if( ( posY < 0 ) || ( posY + person_height > screen_height ) )
     {
         //Move back
