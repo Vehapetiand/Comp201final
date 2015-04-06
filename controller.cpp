@@ -4,10 +4,9 @@
 using namespace std;
 
 Controller::Controller() {
-	int screen_height = 768
-	int screen_width = 1080
+	
     model = new Model();
-    view = new View("Game", screen_width, screen_height);
+    view = new View("Game", 1080, 768);
 }
 
 Controller::~Controller() {
@@ -58,32 +57,3 @@ void Controller::loop() {
 }
 
 
-void person::person()
-{
-	posX = 0;
-	posY = 0;
-	velX = 0;
-	velY = 0;
-};
-void person::move()
-{
-    //Move the person left or right
-    posX += velX;
-
-    //If the person went too far to the left or right
-    if( ( posX < 0 ) || ( posX + person_height > screen_width ) )
-    {
-        //Move back
-        posX -= velX;
-    }
-
-    //Move the person up or down
-    posY += velY;
-
-    //If the person went too far up or down
-    if( ( posY < 0 ) || ( posY + person_height > screen_height ) )
-    {
-        //Move back
-        posY -= velY;
-    }
-}
