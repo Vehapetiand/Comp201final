@@ -81,7 +81,7 @@ void View::show(Model * model) {
        255, 255, 255));
 	
 	//SDL_BlitSurface(Main_idle,NULL,screen,NULL);	use sdlfillrect
-SDL_FillRect(screen, Main_idle, SDL_MapRGB(screen->format, 255,255,255 ));	
+	SDL_FillRect(screen, Main_idle, SDL_MapRGB(screen->format, 255,255,255 ));	
 
     // Probably call SDL_FillRect or SDL_BlitSurface a bunch here :-)
 //	 SDL_FillRect(screen, NULL, ,NULL);
