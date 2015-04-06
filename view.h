@@ -23,12 +23,14 @@ private:
     SDL_Surface* screen;
     bool fail;
     SDL_Surface* load(char * path);
+	
 	SDL_Surface* image;
 	SDL_Surface* Main_idle;
 	SDL_Surface* Main_walk1;
 	SDL_Surface* Main_walk2;
 	SDL_Surface* Main_walk3;
 	SDL_Surface* Main_jump;
+	SDL_Surface* Background;
 	//    SDL_Surface* text;
 //    Mix_Music * music;
 //    Mix_Chunk * food;
