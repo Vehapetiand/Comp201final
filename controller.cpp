@@ -55,5 +55,9 @@ void Controller::loop() {
     view->show(model);
     SDL_Delay(3000);
 }
+void View::show(Model * model)
+{
+	SDL_BlitSurface(EndGame,NULL,screen,NULL);
+}
 
 

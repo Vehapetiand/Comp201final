@@ -34,7 +34,7 @@ class person
 		int velX, velY;
 };
 
- void person::person()
+ person::person()
 {
 	posX = 0;
 	posY = 0;

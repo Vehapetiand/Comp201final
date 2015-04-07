@@ -40,6 +40,7 @@ View::View(string title, int width, int height) {
 	Main_walk3 = load("assets/Main_walk3.png");
 	Main_jump = load("assets/Main_jump.png");
 	Background = load("assets/Background.png");
+	EndGame = load("assets/Endgame.png");
 	
 	
 //    music = Mix_LoadMUS("assets/2Inventions_-_Johaness_Gilther_-_Don_t_leave_me.mp3");
