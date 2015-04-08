@@ -3,10 +3,7 @@
 
 enum Direction { UP, LEFT, RIGHT, DEAD };
 
-typedef struct {
-     int x;
-     int y;
-} Coordinate;
+
 
 // The model manages the state of the game
 class Model {
