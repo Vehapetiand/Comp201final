@@ -39,14 +39,15 @@ View::View(string title, int width, int height) {
 	Main_walk2 = load("assets/Main_walk2.png");
 	Main_walk3 = load("assets/Main_walk3.png");
 	Main_jump = load("assets/Main_jump.png");
-	Background = load("assets/Background.png");
+	Background = load("assets/Level.png");
+	
 	
 	
 //    music = Mix_LoadMUS("assets/2Inventions_-_Johaness_Gilther_-_Don_t_leave_me.mp3");
 //    if (music != NULL) {
 //       Mix_PlayMusic( music, -1 );
 //    }
-//    food = Mix_LoadWAV("assets/yummy.wav");
+//    
     font = TTF_OpenFont( "assets/LiberationSans-Regular.ttf", 28 );
 
 }
@@ -80,13 +81,13 @@ void View::show(Model * model) {
 
     SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format,
        255, 255, 255));
-	   SDL_BlitSurface(Background,NULL,screen,NULL);
+	SDL_BlitSurface(Background,NULL,screen,NULL);
 	
 	//SDL_BlitSurface(Main_idle,NULL,screen,NULL);	use sdlfillrect
-//SDL_FillRect(screen, Main_idle, SDL_MapRGB(screen->format, 255,255,255 ));	
+	//SDL_FillRect(screen, Main_idle, SDL_MapRGB(screen->format, 255,255,255 ));	
 
     // Probably call SDL_FillRect or SDL_BlitSurface a bunch here :-)
-//	 SDL_FillRect(screen, NULL, ,NULL);
+	//	 SDL_FillRect(screen, NULL, ,NULL);
 	 
     SDL_UpdateWindowSurface(window);
 }

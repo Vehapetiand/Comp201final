@@ -6,7 +6,7 @@ using namespace std;
 Controller::Controller() {
 	
     model = new Model();
-    view = new View("Game", 1080, 768);
+    view = new View("Game", 1080, 224);
 }
 
 Controller::~Controller() {

@@ -34,13 +34,15 @@ class person
 		int velX, velY;
 };
 
- void person::person()
+ /* void person::person()
 {
 	posX = 0;
 	posY = 0;
 	velX = 0;
 	velY = 0;
 }
+*/
+
 void person::move()
 {
     //Move the guy left or right
