@@ -1,4 +1,8 @@
 
+
+#ifndef _VIEW_H
+#define _VIEW_H
+
 #define SDL_MAIN_HANDLED
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
@@ -7,9 +11,6 @@
 #include "model.h"
 #include <map>
 #include <string>
-
-#ifndef _VIEW_H
-#define _VIEW_H
 
 // Show (output) the state of the model
 class View {

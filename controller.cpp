@@ -23,7 +23,6 @@ void Controller::loop() {
     unsigned int lastTime = 0, currentTime;
     std::map<SDL_Keycode, Direction> direction;
     direction[SDLK_UP] = UP;
-    direction[SDLK_DOWN] = DOWN;
     direction[SDLK_LEFT] = LEFT;
     direction[SDLK_RIGHT] = RIGHT;
 
@@ -54,10 +53,6 @@ void Controller::loop() {
     // TODO: show something nice?
     view->show(model);
     SDL_Delay(3000);
-}
-void View::show(Model * model)
-{
-	SDL_BlitSurface(EndGame,NULL,screen,NULL);
 }
 
 

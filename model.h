@@ -9,7 +9,7 @@ enum Direction { UP, LEFT, RIGHT, DEAD };
 class Model {
 public:
     // Constructor (instantiates object)
-    Model(int w, int h);
+    Model();
     // Destructor deletes all dynamically allocated stuff
     ~Model();
     // Which way should the snake face?
