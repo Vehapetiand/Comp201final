@@ -43,6 +43,9 @@ View::View(string title, int width, int height) {
 	EndGame = load("assets/Endgame.png");
 	
 	
+	
+	
+	
 //    music = Mix_LoadMUS("assets/2Inventions_-_Johaness_Gilther_-_Don_t_leave_me.mp3");
 //    if (music != NULL) {
 //       Mix_PlayMusic( music, -1 );
