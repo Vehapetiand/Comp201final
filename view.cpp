@@ -40,7 +40,13 @@ View::View(string title, int width, int height) {
 	Main_walk3 = load("assets/Main_walk3.png");
 	Main_jump = load("assets/Main_jump.png");
 	Background = load("assets/Background.png");
+<<<<<<< HEAD
 	Fground = load ("assets/Foreground.png");
+=======
+	EndGame = load("assets/Endgame.png");
+	
+	
+>>>>>>> 3defc26389f877049bddf87ebe178ca4da9ec06f
 	
 	
 	
@@ -82,6 +88,7 @@ void View::show(Model * model) {
 
     SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format,
        255, 255, 255));
+<<<<<<< HEAD
 	
 	SDL_FillRect(Fground, NULL, SDL_MapRGB(Fground->format,
        0, 0, 0));
@@ -104,6 +111,28 @@ void View::show(Model * model) {
 
     // Probably call SDL_FillRect or SDL_BlitSurface a bunch here :-)
 	//	 SDL_FillRect(screen, NULL, ,NULL);
+=======
+	   SDL_BlitSurface(Background,NULL,screen,NULL);
+	   
+	      SDL_Rect dest;
+    dest.w = 16;
+    dest.h = 16;
+    
+    // TODO: I went all Atari 2600 on you guys. Perhaps you'd like to upgrade
+    // the view with something nice, like a cartoon snake?
+    // HINT: you'd need up, down, left, and right facing assets for:
+    // the snake head, a dead head, the tail, and elbows
+    // HINT: you'd of course need assets for horizontal and vertical snake sections
+
+    // Draw food
+    dest.x = 0;
+    dest.y = 0;
+    SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format,0x00, 0x00, 0x00)); 
+	SDL_BlitSurface(Main_idle,NULL,screen,NULL); 
+	SDL_SetColorKey(Main_idle, SDL_TRUE, SDL_MapRGB(screen->format,0x00,0x00,0x00));
+	// Probably call SDL_FillRect or SDL_BlitSurface a bunch here :-)
+//	 SDL_FillRect(screen, NULL, ,NULL);
+>>>>>>> 3defc26389f877049bddf87ebe178ca4da9ec06f
 	 
     SDL_UpdateWindowSurface(window);
 }
