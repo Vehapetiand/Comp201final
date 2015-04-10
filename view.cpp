@@ -40,6 +40,7 @@ View::View(string title, int width, int height) {
 	Main_walk3 = load("assets/Main_walk3.png");
 	Main_jump = load("assets/Main_jump.png");
 	Background = load("assets/Background.png");
+	Fground = load ("assets/Foreground.png");
 	
 	
 	
@@ -81,7 +82,22 @@ void View::show(Model * model) {
 
     SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format,
        255, 255, 255));
+	
+	SDL_FillRect(Fground, NULL, SDL_MapRGB(Fground->format,
+       0, 0, 0));
+	
 	SDL_BlitSurface(Background,NULL,screen,NULL);
+	
+	SDL_BlitSurface(Fground,NULL,screen,NULL);
+	
+	
+	
+	SDL_Surface *s;
+
+	/* Creating the surface. */
+	
+
+	/* Filling the surface with red color. */
 	
 	//SDL_BlitSurface(Main_idle,NULL,screen,NULL);	use sdlfillrect
 	//SDL_FillRect(screen, Main_idle, SDL_MapRGB(screen->format, 255,255,255 ));	
