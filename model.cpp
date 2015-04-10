@@ -34,7 +34,12 @@ class person
 		int velX, velY;
 };
 
+<<<<<<< HEAD
  /* void person::person()
+=======
+/*
+ void person::person()
+>>>>>>> b8b1daebc0bceac135012a220db2bf252219700c
 {
 	posX = 0;
 	posY = 0;
@@ -42,7 +47,10 @@ class person
 	velY = 0;
 }
 */
+<<<<<<< HEAD
 
+=======
+>>>>>>> b8b1daebc0bceac135012a220db2bf252219700c
 void person::move()
 {
     //Move the guy left or right

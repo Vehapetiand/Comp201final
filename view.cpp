@@ -39,7 +39,7 @@ View::View(string title, int width, int height) {
 	Main_walk2 = load("assets/Main_walk2.png");
 	Main_walk3 = load("assets/Main_walk3.png");
 	Main_jump = load("assets/Main_jump.png");
-	Background = load("assets/Level.png");
+	Background = load("assets/Background.png");
 	
 	
 	
