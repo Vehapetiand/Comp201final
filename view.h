@@ -32,6 +32,7 @@ private:
 	SDL_Surface* Main_walk3;
 	SDL_Surface* Main_jump;
 	SDL_Surface* Background;
+	SDL_Surface* Foreground;
 	SDL_Surface* EndGame;
 	//    SDL_Surface* text;
 //    Mix_Music * music;

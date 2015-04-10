@@ -85,11 +85,24 @@ void View::show(Model * model) {
     SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format,
        255, 255, 255));
 	   SDL_BlitSurface(Background,NULL,screen,NULL);
-	
-	//SDL_BlitSurface(Main_idle,NULL,screen,NULL);	use sdlfillrect
-//SDL_FillRect(screen, Main_idle, SDL_MapRGB(screen->format, 255,255,255 ));	
+	   
+	      SDL_Rect dest;
+    dest.w = 16;
+    dest.h = 16;
+    
+    // TODO: I went all Atari 2600 on you guys. Perhaps you'd like to upgrade
+    // the view with something nice, like a cartoon snake?
+    // HINT: you'd need up, down, left, and right facing assets for:
+    // the snake head, a dead head, the tail, and elbows
+    // HINT: you'd of course need assets for horizontal and vertical snake sections
 
-    // Probably call SDL_FillRect or SDL_BlitSurface a bunch here :-)
+    // Draw food
+    dest.x = 0;
+    dest.y = 0;
+    SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format,0x00, 0x00, 0x00)); 
+	SDL_BlitSurface(Main_idle,NULL,screen,NULL); 
+	SDL_SetColorKey(Main_idle, SDL_TRUE, SDL_MapRGB(screen->format,0x00,0x00,0x00));
+	// Probably call SDL_FillRect or SDL_BlitSurface a bunch here :-)
 //	 SDL_FillRect(screen, NULL, ,NULL);
 	 
     SDL_UpdateWindowSurface(window);
