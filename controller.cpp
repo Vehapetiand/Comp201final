@@ -5,8 +5,8 @@ using namespace std;
 
 Controller::Controller() {
 	
-    model = new Model();
-    view = new View("Game", 1080, 768);
+	model = new Model();
+    view = new View("Game", 1024, 768);
 }
 
 Controller::~Controller() {
@@ -23,7 +23,6 @@ void Controller::loop() {
     unsigned int lastTime = 0, currentTime;
     std::map<SDL_Keycode, Direction> direction;
     direction[SDLK_UP] = UP;
-    direction[SDLK_DOWN] = DOWN;
     direction[SDLK_LEFT] = LEFT;
     direction[SDLK_RIGHT] = RIGHT;
 
