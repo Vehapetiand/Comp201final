@@ -40,14 +40,11 @@ View::View(string title, int width, int height) {
 	Main_walk3 = load("assets/Main_walk3.png");
 	Main_jump = load("assets/Main_jump.png");
 	Background = load("assets/Background.png");
-<<<<<<< HEAD
 	Fground = load ("assets/Foreground.png");
-=======
 	EndGame = load("assets/Endgame.png");
 	
 	
->>>>>>> 3defc26389f877049bddf87ebe178ca4da9ec06f
-	
+
 	
 	
 //    music = Mix_LoadMUS("assets/2Inventions_-_Johaness_Gilther_-_Don_t_leave_me.mp3");
@@ -88,7 +85,6 @@ void View::show(Model * model) {
 
     SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format,
        255, 255, 255));
-<<<<<<< HEAD
 	
 	SDL_FillRect(Fground, NULL, SDL_MapRGB(Fground->format,
        0, 0, 0));
@@ -111,7 +107,6 @@ void View::show(Model * model) {
 
     // Probably call SDL_FillRect or SDL_BlitSurface a bunch here :-)
 	//	 SDL_FillRect(screen, NULL, ,NULL);
-=======
 	   SDL_BlitSurface(Background,NULL,screen,NULL);
 	   
 	      SDL_Rect dest;
@@ -132,7 +127,7 @@ void View::show(Model * model) {
 	SDL_SetColorKey(Main_idle, SDL_TRUE, SDL_MapRGB(screen->format,0x00,0x00,0x00));
 	// Probably call SDL_FillRect or SDL_BlitSurface a bunch here :-)
 //	 SDL_FillRect(screen, NULL, ,NULL);
->>>>>>> 3defc26389f877049bddf87ebe178ca4da9ec06f
+
 	 
     SDL_UpdateWindowSurface(window);
 }
