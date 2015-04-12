@@ -18,5 +18,3 @@ bool Model::gameOver() {
 
 
 
-
-
