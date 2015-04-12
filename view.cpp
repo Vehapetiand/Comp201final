@@ -100,7 +100,7 @@ void View::show(Model * model) {
     dest.x = 0;
     dest.y = 0;
     SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format,0x00, 0x00, 0x00)); 
-	SDL_BlitSurface(Main_idle,NULL,screen,NULL); 
+	SDL_BlitSurface(Main_idle,NULL/*which part of image*/,screen,&dest/*where on screen*/); 
 	SDL_SetColorKey(Main_idle, SDL_TRUE, SDL_MapRGB(screen->format,0x00,0x00,0x00));
 	// Probably call SDL_FillRect or SDL_BlitSurface a bunch here :-)
 //	 SDL_FillRect(screen, NULL, ,NULL);
