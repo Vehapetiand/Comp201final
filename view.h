@@ -22,8 +22,6 @@ public:
 private:
     SDL_Window* window;
     SDL_Surface* screen;
-	SDL_Surface* Fground;
-	SDL_Surface* Bground;
     bool fail;
     SDL_Surface* load(char * path);
 	
