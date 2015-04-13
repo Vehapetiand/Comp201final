@@ -40,9 +40,11 @@ View::View(string title, int width, int height) {
 	Main_walk3 = load("assets/Main_walk3.png");
 	Main_jump = load("assets/Main_jump.png");
 	Background = load("assets/Background.png");
+	Foreground = load ("assets/Foreground.png");
 	EndGame = load("assets/Endgame.png");
 	
 	
+
 	
 	
 	
@@ -50,7 +52,7 @@ View::View(string title, int width, int height) {
 //    if (music != NULL) {
 //       Mix_PlayMusic( music, -1 );
 //    }
-//    food = Mix_LoadWAV("assets/yummy.wav");
+//    
     font = TTF_OpenFont( "assets/LiberationSans-Regular.ttf", 28 );
 
 }
@@ -81,29 +83,42 @@ SDL_Surface* View::load(char * path) {
 }
 
 void View::show(Model * model) {
-
-    SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format,
-       255, 255, 255));
-	   SDL_BlitSurface(Background,NULL,screen,NULL);
-	   
-	      SDL_Rect dest;
-    dest.w = 16;
-    dest.h = 16;
-    
-    // TODO: I went all Atari 2600 on you guys. Perhaps you'd like to upgrade
-    // the view with something nice, like a cartoon snake?
-    // HINT: you'd need up, down, left, and right facing assets for:
-    // the snake head, a dead head, the tail, and elbows
-    // HINT: you'd of course need assets for horizontal and vertical snake sections
-
-    // Draw food
-    dest.x = 0;
-    dest.y = 0;
-    SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format,0x00, 0x00, 0x00)); 
-	SDL_BlitSurface(Main_idle,NULL,screen,NULL); 
+	//All of these are just creating rectangle with specific x and y's
+	//Only use if you want a portion of the image;
+	SDL_Rect dest; 
+	SDL_Rect floor;
+	SDL_Rect sky;
+	//Clipped the sky background so its more of the middle of the picture
+	sky.x = 0;
+	sky.y = 300; 
+	/* ^^ this is the clipping of the picture when used in 
+	SDL_BlitSurface(image,clipping part,screen image is blits to,location on screen); 
+	*/
+	sky.w = 3600;
+	sky.h = 768;
+	// x and y of foreground
+	floor.x = 0;
+    floor.y = 300;
+	floor.h = 75;
+	floor.w = 3600;
+	//Foreground is 3600 by 75 
+	// Initial Location of Main character
+    dest.x = 5;
+    dest.y = 255;
+	dest.w = 16;
+	dest.h = 16;
+	SDL_BlitSurface(Background,&sky,screen,NULL); // First blits background
+	SDL_BlitSurface(Foreground,NULL,screen,&floor); 
+	// Then foreground **They need to be in this order
+ 	SDL_BlitSurface(Main_idle,NULL,screen,&dest); 
 	SDL_SetColorKey(Main_idle, SDL_TRUE, SDL_MapRGB(screen->format,0x00,0x00,0x00));
-	// Probably call SDL_FillRect or SDL_BlitSurface a bunch here :-)
-//	 SDL_FillRect(screen, NULL, ,NULL);
+	// ^^ this is the character
+
 	 
     SDL_UpdateWindowSurface(window);
+	
+	
+	
+	
+		
 }

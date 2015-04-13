@@ -16,8 +16,5 @@ bool Model::gameOver() {
     return false;
 }
 
-/*
-*/
-
 
 
