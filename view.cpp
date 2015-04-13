@@ -116,5 +116,9 @@ void View::show(Model * model) {
 
 	 
     SDL_UpdateWindowSurface(window);
+	
+	
+	
+	
 		
 }
