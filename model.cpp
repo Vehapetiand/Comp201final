@@ -14,14 +14,22 @@ Model::Model() {
 // Destructor deletes dynamically allocated memory
 Model::~Model() {
 }
+void Model::Fall(){
+	while (character.y < 255)
+	{	
+		character.y++;
+	}
+	
+}
+
 void Model::Jump(Direction d){
 	
+	int jumph = 5;
 	direction = d;
-	
+	/*
 	switch(direction) {
     case LEFT: 
 	character.x--; 
-
 	
 	break;
     case RIGHT: 
@@ -30,6 +38,8 @@ void Model::Jump(Direction d){
 	character.y--;
 	break;
     }
+	*/
+	character.y -= jumph * 2;
 	
 	
 	

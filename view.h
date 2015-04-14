@@ -32,6 +32,8 @@ private:
 	SDL_Surface* Background;
 	SDL_Surface* Foreground;
 	SDL_Surface* EndGame;
+	SDL_Surface* cloud1;
+	SDL_Surface* cloud2;
 	//    SDL_Surface* text;
 //    Mix_Music * music;
 //    Mix_Chunk * food;

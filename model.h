@@ -29,6 +29,7 @@ public:
 	void Walk(Direction d);
 	//Makes Character Jump
 	void Jump(Direction d);
+	void Fall();
 	
 	
 };
