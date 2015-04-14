@@ -19,14 +19,8 @@ void Model::Jump(Direction d){
 	direction = d;
 	
 	switch(direction) {
-    case LEFT: 
-	character.x--; 
-
-	
-	break;
-    case RIGHT: 
-	character.x++;
-	//while (character.y )
+		
+	case UP:
 	character.y--;
 	break;
     }

@@ -38,7 +38,7 @@ void Controller::loop() {
             case SDL_KEYDOWN:
                 switch(event.key.keysym.sym) {
                 case SDLK_DOWN: break;
-				case (SDLK_UP): model->Jump(RIGHT);break;
+				case (SDLK_UP): model->Jump(UP);break;
                 case SDLK_LEFT:	model->Walk(LEFT); break;
                 case SDLK_RIGHT: model->Walk(RIGHT); break;
 					
