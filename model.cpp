@@ -12,6 +12,18 @@ Model::Model() {
 Model::~Model() {
 }
 
+void Model::move()
+{
+	
+	switch(direction)
+{
+    case LEFT: dest.x--; break;
+    case RIGHT: dest.x++; break;
+}
+}
+
+
+
 bool Model::gameOver() {
     return false;
 }

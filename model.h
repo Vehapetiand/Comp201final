@@ -22,6 +22,7 @@ public:
     int width;
     // What's the height?
     int height;
+	void move();
 };
 
 

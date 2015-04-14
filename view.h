@@ -1,5 +1,3 @@
-
-
 #ifndef _VIEW_H
 #define _VIEW_H
 

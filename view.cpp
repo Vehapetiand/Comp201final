@@ -92,7 +92,7 @@ void View::show(Model * model) {
 	sky.x = 0;
 	sky.y = 300; 
 	/* ^^ this is the clipping of the picture when used in 
-	SDL_BlitSurface(image,clipping part,screen image is blits to,location on screen); 
+	SDL_BlitSurface(image,clipping part,screen image is blit to,location on screen); 
 	*/
 	sky.w = 3600;
 	sky.h = 768;
@@ -107,7 +107,7 @@ void View::show(Model * model) {
     dest.y = 255;
 	dest.w = 16;
 	dest.h = 16;
-	SDL_BlitSurface(Background,&sky,screen,NULL); // First blits background
+	SDL_BlitSurface(Background,&sky,screen,NULL); // First blit background
 	SDL_BlitSurface(Foreground,NULL,screen,&floor); 
 	// Then foreground **They need to be in this order
  	SDL_BlitSurface(Main_idle,NULL,screen,&dest); 
