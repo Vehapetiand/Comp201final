@@ -24,7 +24,7 @@ private:
     SDL_Surface* screen;
     bool fail;
     SDL_Surface* load(char * path);
-	
+	Mix_Music * music;
 	SDL_Surface* image;
 	SDL_Surface* Main_idle;
 	SDL_Surface* Main_walk1;

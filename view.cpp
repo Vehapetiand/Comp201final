@@ -6,7 +6,10 @@ using namespace std;
 View::View(string title, int width, int height) {
     fail = false;
     SDL_SetMainReady();
-    if (SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) < 0) {
+    
+
+	
+	if (SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) < 0) {
         fail = true;
         return;
     }
@@ -42,19 +45,18 @@ View::View(string title, int width, int height) {
 	Background = load("assets/Background.png");
 	Foreground = load ("assets/Foreground.png");
 	EndGame = load("assets/Endgame.png");
-	
+
 	
 
 	
 	
 	
-//    music = Mix_LoadMUS("assets/2Inventions_-_Johaness_Gilther_-_Don_t_leave_me.mp3");
-//    if (music != NULL) {
-//       Mix_PlayMusic( music, -1 );
-//    }
-//    
-    font = TTF_OpenFont( "assets/LiberationSans-Regular.ttf", 28 );
-
+    music = Mix_LoadMUS("assets/Song.mp3");
+    if (music != NULL) {
+       Mix_PlayMusic( music, -1 );
+    }
+    
+   
 }
 
 View::~View() {
