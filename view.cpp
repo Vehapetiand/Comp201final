@@ -6,8 +6,6 @@ using namespace std;
 View::View(string title, int width, int height) {
     fail = false;
     SDL_SetMainReady();
-    
-
 	
 	if (SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) < 0) {
         fail = true;
@@ -49,9 +47,7 @@ View::View(string title, int width, int height) {
 	
 
 	
-	
-	
-    music = Mix_LoadMUS("assets/Song.mp3");
+    music = Mix_LoadMUS("assets/Music.mp3");
     if (music != NULL) {
        Mix_PlayMusic( music, -1 );
     }
