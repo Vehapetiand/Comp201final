@@ -23,6 +23,9 @@ public:
     int width;
     // What's the height?
     int height;
+<<<<<<< HEAD
+	void move();
+=======
 	//Coordinate for character
 	Coordinate character;
 	//Moves the Character left or right
@@ -31,6 +34,7 @@ public:
 	void Jump(Direction d);
 	
 	
+>>>>>>> d19c57562ab26efb0bd0ac976bfe46be7501945d
 };
 
 

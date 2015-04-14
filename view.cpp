@@ -6,7 +6,8 @@ using namespace std;
 View::View(string title, int width, int height) {
     fail = false;
     SDL_SetMainReady();
-    if (SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) < 0) {
+	
+	if (SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) < 0) {
         fail = true;
         return;
     }
@@ -42,21 +43,18 @@ View::View(string title, int width, int height) {
 	Background = load("assets/Background.png");
 	Foreground = load ("assets/Foreground.png");
 	EndGame = load("assets/Endgame.png");
-	
+
 	
 
 	
-	
-	
-//    music = Mix_LoadMUS("assets/2Inventions_-_Johaness_Gilther_-_Don_t_leave_me.mp3");
-//    if (music != NULL) {
-//       Mix_PlayMusic( music, -1 );
-//    }
-//    
-    font = TTF_OpenFont( "assets/LiberationSans-Regular.ttf", 28 );
-
+    music = Mix_LoadMUS("assets/Music.mp3");
+    if (music != NULL) {
+       Mix_PlayMusic( music, -1 );
+    }
+    
+   
 }
-
+//technically 
 View::~View() {
     SDL_DestroyWindow(window);
     IMG_Quit();
@@ -103,8 +101,8 @@ void View::show(Model * model) {
 	floor.w = 3600;
 	//Foreground is 3600 by 75 
 	// Initial Location of Main character
-    dest.x = 5;
-    dest.y = 255;
+    dest.x = model->character.x *3;
+    dest.y = model->character.y;
 	dest.w = 16;
 	dest.h = 16;
 	SDL_BlitSurface(Background,&sky,screen,NULL); // First blit background
@@ -116,5 +114,9 @@ void View::show(Model * model) {
 
 	 
     SDL_UpdateWindowSurface(window);
+	
+	
+	
+	
 		
 }

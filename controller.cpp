@@ -19,7 +19,7 @@ https://wiki.libsdl.org/SDL_PollEvent
 https://wiki.libsdl.org/SDL_Event
 */
 void Controller::loop() {
-    SDL_Event e;
+    SDL_Event event;
     unsigned int lastTime = 0, currentTime;
     std::map<SDL_Keycode, Direction> direction;
     direction[SDLK_UP] = UP;
@@ -30,18 +30,18 @@ void Controller::loop() {
         currentTime = SDL_GetTicks();
         // Do stuff here to animate as necessary
         view->show(model);
-        if (SDL_PollEvent(&e) != 0) {
-            switch (e.type) {
+			
+        if (SDL_PollEvent(&event) != 0) {
+            switch (event.type) {
             case SDL_QUIT:
                 return;
             case SDL_KEYDOWN:
-                switch(e.key.keysym.sym) {
-                case SDLK_DOWN:
-                case SDLK_UP:
-                case SDLK_LEFT:
-                case SDLK_RIGHT:
-//                    model->go(direction[e.key.keysym.sym]);
-                break;
+                switch(event.key.keysym.sym) {
+                case SDLK_DOWN: break;
+				case (SDLK_UP): model->Jump(RIGHT);break;
+                case SDLK_LEFT:	model->Walk(LEFT); break;
+                case SDLK_RIGHT: model->Walk(RIGHT); break;
+					
                 default:
                 break;
                 }
@@ -52,7 +52,6 @@ void Controller::loop() {
     }
     // TODO: show something nice?
     view->show(model);
-    SDL_Delay(3000);
 }
 
 
