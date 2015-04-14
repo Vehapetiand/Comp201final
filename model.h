@@ -3,6 +3,10 @@
 
 enum Direction { UP, LEFT, RIGHT, DEAD };
 
+typedef struct {
+    int x;
+    int y;
+} Coordinate;
 
 
 // The model manages the state of the game
@@ -12,9 +16,6 @@ public:
     Model();
     // Destructor deletes all dynamically allocated stuff
     ~Model();
-    // Which way should the snake face?
-    void go(Direction d);
-    // Is the game over?
     bool gameOver();
     // Which way is the snake moving?
     Direction direction;
@@ -22,6 +23,12 @@ public:
     int width;
     // What's the height?
     int height;
+	//Coordinate for character
+	Coordinate character;
+	//Moves the Character left or right
+	void Walk(Direction d);
+	//Makes Character Jump
+	void Jump(Direction d);
 	
 	
 };

@@ -54,7 +54,7 @@ View::View(string title, int width, int height) {
     
    
 }
-
+//technically 
 View::~View() {
     SDL_DestroyWindow(window);
     IMG_Quit();
@@ -101,8 +101,8 @@ void View::show(Model * model) {
 	floor.w = 3600;
 	//Foreground is 3600 by 75 
 	// Initial Location of Main character
-    dest.x = 5;
-    dest.y = 255;
+    dest.x = model->character.x *3;
+    dest.y = model->character.y;
 	dest.w = 16;
 	dest.h = 16;
 	SDL_BlitSurface(Background,&sky,screen,NULL); // First blits background
