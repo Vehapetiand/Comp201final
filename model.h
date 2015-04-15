@@ -8,6 +8,10 @@ enum Direction { UP, LEFT, RIGHT, DEAD, DOWN};
 
 typedef SDL_Rect Coordinate;
   
+typedef struct {
+    int x;
+    int y;
+} Coordinate;
 
 
 // The model manages the state of the game

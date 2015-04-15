@@ -57,15 +57,6 @@ View::View(string title, int width, int height) {
     if (music != NULL) {
        Mix_PlayMusic( music, -1 );
     }
-	
-	
-//    music = Mix_LoadMUS("assets/2Inventions_-_Johaness_Gilther_-_Don_t_leave_me.mp3");
-//    if (music != NULL) {
-//       Mix_PlayMusic( music, -1 );
-//    }
-//    
-    font = TTF_OpenFont( "assets/LiberationSans-Regular.ttf", 28 );
-
 }
 //technically 
 View::~View() {
