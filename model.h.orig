@@ -4,16 +4,17 @@
 #define SDL_MAIN_HANDLED
 #include <SDL2/SDL.h>
 
-
+<<<<<<< HEAD
 enum Direction { UP, LEFT, RIGHT, DEAD, DOWN};
 
 typedef SDL_Rect Coordinate;
-
+  
+=======
 typedef struct {
     int x;
     int y;
 } Coordinate;
-
+>>>>>>> 5efa096e7622d8d648953b81b06c74e6246d2173
 
 
 // The model manages the state of the game
@@ -32,13 +33,12 @@ public:
     int height;
 	//Coordinate for character
 	Coordinate character;
-	Coordinate floor;
 	//Moves the Character left or right
 	void Walk(Direction d);
 	//Makes Character Jump
 	void Jump(Direction d);
 	void Fall();
-
+	
 	
 };
 
