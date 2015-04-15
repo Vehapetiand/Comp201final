@@ -25,6 +25,7 @@ void Controller::loop() {
     direction[SDLK_UP] = UP;
     direction[SDLK_LEFT] = LEFT;
     direction[SDLK_RIGHT] = RIGHT;
+	 direction[SDLK_DOWN] = DOWN;
     while(!model->gameOver()) {
         currentTime = SDL_GetTicks();
         // Do stuff here to animate as necessary

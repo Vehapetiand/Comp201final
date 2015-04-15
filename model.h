@@ -7,11 +7,7 @@
 enum Direction { UP, LEFT, RIGHT, DEAD, DOWN};
 
 typedef SDL_Rect Coordinate;
-  
-typedef struct {
-    int x;
-    int y;
-} Coordinate;
+ 
 
 
 // The model manages the state of the game
@@ -30,6 +26,8 @@ public:
     int height;
 	//Coordinate for character
 	Coordinate character;
+	Coordinate floor;
+	Coordinate cloud;
 	//Moves the Character left or right
 	void Walk(Direction d);
 	//Makes Character Jump
