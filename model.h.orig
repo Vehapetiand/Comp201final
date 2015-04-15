@@ -1,13 +1,12 @@
 #ifndef _MODEL_H
 #define _MODEL_H
 
-#define SDL_MAIN_HANDLED
-#include <SDL2/SDL.h>
+enum Direction { UP, LEFT, RIGHT, DEAD };
 
-enum Direction { UP, LEFT, RIGHT, DEAD, DOWN};
-
-typedef SDL_Rect Coordinate;
-
+typedef struct {
+    int x;
+    int y;
+} Coordinate;
 
 
 // The model manages the state of the game
@@ -24,17 +23,18 @@ public:
     int width;
     // What's the height?
     int height;
+<<<<<<< HEAD
+	void move();
+=======
 	//Coordinate for character
 	Coordinate character;
-	Coordinate floor;
-	Coordinate clouds;
 	//Moves the Character left or right
 	void Walk(Direction d);
 	//Makes Character Jump
 	void Jump(Direction d);
-	void Fall();
-	void Clouds();
-
+	
+	
+>>>>>>> d19c57562ab26efb0bd0ac976bfe46be7501945d
 };
 
 
