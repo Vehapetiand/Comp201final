@@ -28,6 +28,8 @@ public:
 	Coordinate character;
 	Coordinate floor;
 	Coordinate clouds;
+	Coordinate othercloud;
+	
 	//Moves the Character left or right
 	void Walk(Direction d);
 	//Makes Character Jump

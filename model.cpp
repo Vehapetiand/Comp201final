@@ -7,6 +7,7 @@ using namespace std;
 // Constructor initializes the object
 Model::Model() {
 	clouds.x = -100;
+	othercloud.x = 400;
 	
 	character.x = 0;
 	character.y = 255;
@@ -24,15 +25,19 @@ Model::~Model() {
 }
 
 void Model::Fall(){
-	if (SDL_HasIntersection(&character, &floor)) {
-		
-	}
-	else
-		
+
+	
+	character.y++;
+	
+	
+	
 }
+
 void Model::Clouds()
 {
 	
+	clouds.x++;
+	othercloud.x++;
 	clouds.x++;
 	
 }
@@ -43,12 +48,12 @@ void Model::Jump(Direction d){
 	
 	switch(direction) {
 		
-		case DOWN:
-		character.y++;
-		break;
+	case DOWN:
+	character.y++;
+	break;
 		
-	case RIGHT:
-	character.y--;
+	case UP:
+	character.y = character.y + 100;
 	break;
     }
 	

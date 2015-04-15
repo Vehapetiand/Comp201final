@@ -88,8 +88,8 @@ void View::show(Model * model) {
 	SDL_Rect cloud;
 	SDL_Rect cloudd;
 	
-	cloud.x = 0;
-	cloud.y = 20;
+	cloud.x = model->othercloud.x;
+	cloud.y = 120;
 	cloud.h = 82;
 	cloud.w = 141;
 	
@@ -123,8 +123,8 @@ void View::show(Model * model) {
 	
 	SDL_SetColorKey(cloud1, SDL_TRUE, SDL_MapRGB(screen->format,0xff,0xff,0xff));
 	SDL_BlitSurface(cloud1, NULL,screen,&cloudd);
-	//SDL_SetColorKey(cloud2, SDL_TRUE, SDL_MapRGB(screen->format,0xff,0xff,0xff));
-	//SDL_BlitSurface(cloud2, NULL,screen,&cloud);
+	SDL_SetColorKey(cloud1, SDL_TRUE, SDL_MapRGB(screen->format,0xff,0xff,0xff));
+	SDL_BlitSurface(cloud1, NULL,screen,&cloud);
 	// Then foreground **They need to be in this order
 	
  	SDL_BlitSurface(Main_idle,NULL,screen,&dest); 
