@@ -26,11 +26,6 @@ void Model::Jump(Direction d){
 	direction = d;
 	
 	switch(direction) {
-void Model::Fall(){
-	while (character.y < 255)
-	{	
-		character.y++;
-	}
 		
 		case DOWN:
 		character.y++;
@@ -44,37 +39,6 @@ void Model::Fall(){
 	if (SDL_HasIntersection(&character, &floor)) {
 		character.y = 255;
 	}
-	
-	
-}
-void Model::Walk(Direction d){
-	direction = d;
-	
-	switch(direction) {
-    case LEFT: character.x--; break;
-    case RIGHT: character.x++; break;
-    }
-}
-
-void Model::Jump(Direction d){
-	
-	int jumph = 5;
-	direction = d;
-	/*
-	switch(direction) {
-    case LEFT: 
-	character.x--; 
-	
-	break;
-    case RIGHT: 
-	character.x++;
-	//while (character.y )
-	character.y--;
-	break;
-    }
-	*/
-	character.y -= jumph * 2;
-	
 	
 	
 }

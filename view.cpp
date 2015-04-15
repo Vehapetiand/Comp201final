@@ -43,8 +43,8 @@ View::View(string title, int width, int height) {
 	Background = load("assets/Background.png");
 	Foreground = load ("assets/Foreground.png");
 	EndGame = load("assets/Endgame.png");
-
-	
+	cloud1 = load("assets/cloud1.png");
+	cloud2 = load("assets/cloud2.png");
 
 	
     music = Mix_LoadMUS("assets/Music.mp3");
@@ -53,6 +53,19 @@ View::View(string title, int width, int height) {
     }
     
    
+    music = Mix_LoadMUS("assets/Music.mp3");
+    if (music != NULL) {
+       Mix_PlayMusic( music, -1 );
+    }
+	
+	
+//    music = Mix_LoadMUS("assets/2Inventions_-_Johaness_Gilther_-_Don_t_leave_me.mp3");
+//    if (music != NULL) {
+//       Mix_PlayMusic( music, -1 );
+//    }
+//    
+    font = TTF_OpenFont( "assets/LiberationSans-Regular.ttf", 28 );
+
 }
 //technically 
 View::~View() {
@@ -86,6 +99,20 @@ void View::show(Model * model) {
 	SDL_Rect dest; 
 	SDL_Rect floor;
 	SDL_Rect sky;
+	SDL_Rect cloud;
+	SDL_Rect cloudd;
+	
+	cloud.x = 0;
+	cloud.y = 20;
+	cloud.h = 82;
+	cloud.w = 141;
+	
+	cloudd.x = 500;
+	cloudd.y = 55;
+	cloudd.h = 82;
+	cloudd.w = 141;
+	
+	
 	//Clipped the sky background so its more of the middle of the picture
 	sky.x = 0;
 	sky.y = 300; 
@@ -107,7 +134,13 @@ void View::show(Model * model) {
 	dest.h = 16;
 	SDL_BlitSurface(Background,&sky,screen,NULL); // First blit background
 	SDL_BlitSurface(Foreground,NULL,screen,&floor); 
+	
+	SDL_SetColorKey(cloud1, SDL_TRUE, SDL_MapRGB(screen->format,0xff,0xff,0xff));
+	SDL_BlitSurface(cloud1, NULL,screen,&cloudd);
+	SDL_SetColorKey(cloud2, SDL_TRUE, SDL_MapRGB(screen->format,0xff,0xff,0xff));
+	SDL_BlitSurface(cloud2, NULL,screen,&cloud);
 	// Then foreground **They need to be in this order
+	
  	SDL_BlitSurface(Main_idle,NULL,screen,&dest); 
 	SDL_SetColorKey(Main_idle, SDL_TRUE, SDL_MapRGB(screen->format,0x00,0x00,0x00));
 	// ^^ this is the character
