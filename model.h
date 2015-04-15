@@ -17,7 +17,7 @@ public:
     // Destructor deletes all dynamically allocated stuff
     ~Model();
     bool gameOver();
-    // Which way is the snake moving?
+    // Which way is the player moving?
     Direction direction;
     // What's the width?
     int width;

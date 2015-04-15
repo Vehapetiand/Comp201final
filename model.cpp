@@ -40,6 +40,7 @@ void Model::Jump(Direction d){
 		character.y = 255;
 	}
 	
+	
 }
 void Model::Walk(Direction d){
 	direction = d;
@@ -48,7 +49,6 @@ void Model::Walk(Direction d){
     case LEFT: character.x--; break;
     case RIGHT: character.x++; break;
     }
-	
 	
 }
 bool Model::gameOver() {
