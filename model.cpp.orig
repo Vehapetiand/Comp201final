@@ -6,10 +6,13 @@ using namespace std;
 
 // Constructor initializes the object
 Model::Model() {
+	clouds.x = -100;
+	othercloud.x = 400;
+	
+	cloud.x = -100;
 	
 	character.x = 0;
 	character.y = 255;
-<<<<<<< HEAD
 	character.w = 16;
 	character.h = 45;
 	
@@ -17,8 +20,6 @@ Model::Model() {
     floor.y = 300;
 	floor.h = 75;
 	floor.w = 3600;
-=======
->>>>>>> 5efa096e7622d8d648953b81b06c74e6246d2173
 
 }
 // Destructor deletes dynamically allocated memory
@@ -26,34 +27,72 @@ Model::~Model() {
 }
 <<<<<<< HEAD
 void Model::Jump(Direction d){
-	
-	direction = d;
-	
-	switch(direction) {
 =======
->>>>>>> 5efa096e7622d8d648953b81b06c74e6246d2173
+
 void Model::Fall(){
-	while (character.y < 255)
-	{	
-		character.y++;
-	}
+
+>>>>>>> fe87ffb64fee2523333212ada220bfc0caa18d62
+	
+	character.y++;
+	
 <<<<<<< HEAD
+	switch(direction){
 		
 		case DOWN:
 		character.y++;
 		break;
 		
-	case RIGHT:
-	character.y--;
+	case UP:
+	character.y = 100;
+	break;
+	}
+	
+	if (SDL_HasIntersection(&character, &floor)) {
+		character.y = 255;
+	}
+=======
+	
+	
+}
+
+void Model::Clouds()
+{
+	
+	clouds.x++;
+	othercloud.x++;
+	clouds.x++;
+	
+}
+>>>>>>> fe87ffb64fee2523333212ada220bfc0caa18d62
+
+	
+<<<<<<< HEAD
+	
+}
+void Model::Fall(){
+	
+	character.y++;
+	
+    }
+=======
+	direction = d;
+	
+	switch(direction) {
+		
+	case DOWN:
+	character.y++;
+	break;
+		
+	case UP:
+	character.y = character.y + 100;
 	break;
     }
 	
 	if (SDL_HasIntersection(&character, &floor)) {
 		character.y = 255;
 	}
+>>>>>>> fe87ffb64fee2523333212ada220bfc0caa18d62
 	
-	
-}
 void Model::Walk(Direction d){
 	direction = d;
 	
@@ -61,42 +100,35 @@ void Model::Walk(Direction d){
     case LEFT: character.x--; break;
     case RIGHT: character.x++; break;
     }
-=======
-	
->>>>>>> 5efa096e7622d8d648953b81b06c74e6246d2173
 }
 
-void Model::Jump(Direction d){
+/*void Model::Jump(Direction d){
 	
+<<<<<<< HEAD
 	int jumph = 5;
 	direction = d;
-	/*
-	switch(direction) {
-    case LEFT: 
-	character.x--; 
 	
+	if (SDL_HasIntersection(&character, &floor)) {
+		character.y = 255;
+	}
+	switch(direction){
+		
+		case DOWN:
+		character.y++;
+		break;
+		
+	case UP:
+	character.y = 100;
 	break;
-    case RIGHT: 
-	character.x++;
-	//while (character.y )
-	character.y--;
-	break;
-    }
-	*/
+	
 	character.y -= jumph * 2;
-	
-	
-	
+	}
+
+}*/
+
+=======
 }
-void Model::Walk(Direction d){
-	direction = d;
-	
-	switch(direction) {
-    case LEFT: character.x--; break;
-    case RIGHT: character.x++; break;
-    }
-	
-}
+>>>>>>> fe87ffb64fee2523333212ada220bfc0caa18d62
 bool Model::gameOver() {
     return false;
 }

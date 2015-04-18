@@ -46,29 +46,20 @@ View::View(string title, int width, int height) {
 	cloud1 = load("assets/cloud1.png");
 	cloud2 = load("assets/cloud2.png");
 
+<<<<<<< HEAD
 	
+=======
+>>>>>>> fe87ffb64fee2523333212ada220bfc0caa18d62
     music = Mix_LoadMUS("assets/Music.mp3");
     if (music != NULL) {
        Mix_PlayMusic( music, -1 );
     }
     
    
-<<<<<<< HEAD
     music = Mix_LoadMUS("assets/Music.mp3");
     if (music != NULL) {
        Mix_PlayMusic( music, -1 );
     }
-	
-	
-//    music = Mix_LoadMUS("assets/2Inventions_-_Johaness_Gilther_-_Don_t_leave_me.mp3");
-//    if (music != NULL) {
-//       Mix_PlayMusic( music, -1 );
-//    }
-//    
-    font = TTF_OpenFont( "assets/LiberationSans-Regular.ttf", 28 );
-
-=======
->>>>>>> 5efa096e7622d8d648953b81b06c74e6246d2173
 }
 //technically 
 View::~View() {
@@ -105,12 +96,12 @@ void View::show(Model * model) {
 	SDL_Rect cloud;
 	SDL_Rect cloudd;
 	
-	cloud.x = 0;
-	cloud.y = 20;
+	cloud.x = model->othercloud.x;
+	cloud.y = 120;
 	cloud.h = 82;
 	cloud.w = 141;
 	
-	cloudd.x = 500;
+	cloudd.x = model->clouds.x;
 	cloudd.y = 55;
 	cloudd.h = 82;
 	cloudd.w = 141;
@@ -140,8 +131,8 @@ void View::show(Model * model) {
 	
 	SDL_SetColorKey(cloud1, SDL_TRUE, SDL_MapRGB(screen->format,0xff,0xff,0xff));
 	SDL_BlitSurface(cloud1, NULL,screen,&cloudd);
-	SDL_SetColorKey(cloud2, SDL_TRUE, SDL_MapRGB(screen->format,0xff,0xff,0xff));
-	SDL_BlitSurface(cloud2, NULL,screen,&cloud);
+	SDL_SetColorKey(cloud1, SDL_TRUE, SDL_MapRGB(screen->format,0xff,0xff,0xff));
+	SDL_BlitSurface(cloud1, NULL,screen,&cloud);
 	// Then foreground **They need to be in this order
 	
  	SDL_BlitSurface(Main_idle,NULL,screen,&dest); 

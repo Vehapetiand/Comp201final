@@ -4,17 +4,14 @@
 #define SDL_MAIN_HANDLED
 #include <SDL2/SDL.h>
 
-<<<<<<< HEAD
 enum Direction { UP, LEFT, RIGHT, DEAD, DOWN};
 
 typedef SDL_Rect Coordinate;
-  
+<<<<<<< HEAD
+ 
 =======
-typedef struct {
-    int x;
-    int y;
-} Coordinate;
->>>>>>> 5efa096e7622d8d648953b81b06c74e6246d2173
+
+>>>>>>> fe87ffb64fee2523333212ada220bfc0caa18d62
 
 
 // The model manages the state of the game
@@ -33,13 +30,26 @@ public:
     int height;
 	//Coordinate for character
 	Coordinate character;
+	Coordinate floor;
+<<<<<<< HEAD
+	Coordinate cloud;
+=======
+	Coordinate clouds;
+	Coordinate othercloud;
+	
+>>>>>>> fe87ffb64fee2523333212ada220bfc0caa18d62
 	//Moves the Character left or right
 	void Walk(Direction d);
 	//Makes Character Jump
 	void Jump(Direction d);
 	void Fall();
+<<<<<<< HEAD
 	
 	
+=======
+	void Clouds();
+
+>>>>>>> fe87ffb64fee2523333212ada220bfc0caa18d62
 };
 
 
