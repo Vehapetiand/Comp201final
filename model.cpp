@@ -18,6 +18,8 @@ Model::Model() {
     floor.y = 300;
 	floor.h = 75;
 	floor.w = 3600;
+	
+	
 
 }
 // Destructor deletes dynamically allocated memory
@@ -41,15 +43,29 @@ void Model::Jump(Direction d){
 	if (SDL_HasIntersection(&character, &floor)) {
 		character.y = 255;
 	}
+	//I was trying to do collision between raised platform and character.
+	/*if (SDL_HasIntersection(&character, &raised)) {
+		if(character.x < raised.x)
+		{
+			character.x = 143;
+		}
+		if (character.x > raised.x)
+		{
+			character.x = 255;
+		}
+		if (character.y > raised.y)
+		{
+			character.y = 225;
+		}
+	}*/
 
 	
 	
 }
 void Model::Fall(){
 	
-	character.y++;
 	
-    }
+}
 	
 void Model::Walk(Direction d){
 	direction = d;
@@ -60,28 +76,6 @@ void Model::Walk(Direction d){
     }
 }
 
-/*void Model::Jump(Direction d){
-	
-	int jumph = 5;
-	direction = d;
-	
-	if (SDL_HasIntersection(&character, &floor)) {
-		character.y = 255;
-	}
-	switch(direction){
-		
-		case DOWN:
-		character.y++;
-		break;
-		
-	case UP:
-	character.y = 100;
-	break;
-	
-	character.y -= jumph * 2;
-	}
-
-}*/
 
 bool Model::gameOver() {
     return false;

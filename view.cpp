@@ -45,6 +45,7 @@ View::View(string title, int width, int height) {
 	EndGame = load("assets/Endgame.png");
 	cloud1 = load("assets/cloud1.png");
 	cloud2 = load("assets/cloud2.png");
+	groundmedium = load("assets/groundmedium.png");
 
 	
     music = Mix_LoadMUS("assets/Music.mp3");
@@ -92,6 +93,7 @@ void View::show(Model * model) {
 	SDL_Rect sky;
 	SDL_Rect cloud;
 	SDL_Rect cloudd;
+	SDL_Rect raised;
 	
 	cloud.x = 0;
 	cloud.y = 20;
@@ -103,6 +105,10 @@ void View::show(Model * model) {
 	cloudd.h = 82;
 	cloudd.w = 141;
 	
+	raised.x = 144;
+	raised.y = 270;
+	raised.h = 75;
+	raised.w = 110;
 	
 	//Clipped the sky background so its more of the middle of the picture
 	sky.x = 0;
@@ -135,6 +141,8 @@ void View::show(Model * model) {
  	SDL_BlitSurface(Main_idle,NULL,screen,&dest); 
 	SDL_SetColorKey(Main_idle, SDL_TRUE, SDL_MapRGB(screen->format,0x00,0x00,0x00));
 	// ^^ this is the character
+	
+	SDL_BlitSurface(groundmedium,NULL,screen,&raised);
 
 	 
     SDL_UpdateWindowSurface(window);
