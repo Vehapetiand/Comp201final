@@ -36,13 +36,14 @@ View::View(string title, int width, int height) {
     }
     // Load assets
 	Main_idle = load("assets/Main_idle.png");
+	Main_idleleft = load("assets/Main_idle_left.png");
 	Main_walk1 = load("assets/Main_walk1.png");
 	Main_walk2 = load("assets/Main_walk2.png");
 	Main_walk3 = load("assets/Main_walk3.png");
 	Main_jump = load("assets/Main_jump.png");
 	Background = load("assets/Background.png");
 	Foreground = load ("assets/Foreground.png");
-	EndGame = load("assets/Endgame.png");
+	Gameover = load("assets/Gameover.png");
 	cloud1 = load("assets/cloud1.png");
 	cloud2 = load("assets/cloud2.png");
 	groundmedium = load("assets/groundmedium.png");
@@ -137,12 +138,12 @@ void View::show(Model * model) {
 	SDL_SetColorKey(cloud2, SDL_TRUE, SDL_MapRGB(screen->format,0xff,0xff,0xff));
 	SDL_BlitSurface(cloud2, NULL,screen,&cloud);
 	// Then foreground **They need to be in this order
-	
+	SDL_BlitSurface(groundmedium,NULL,screen,&raised);
  	SDL_BlitSurface(Main_idle,NULL,screen,&dest); 
 	SDL_SetColorKey(Main_idle, SDL_TRUE, SDL_MapRGB(screen->format,0x00,0x00,0x00));
 	// ^^ this is the character
 	
-	SDL_BlitSurface(groundmedium,NULL,screen,&raised);
+	
 
 	 
     SDL_UpdateWindowSurface(window);

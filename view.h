@@ -25,13 +25,14 @@ private:
 	Mix_Music * music;
 	SDL_Surface* image;
 	SDL_Surface* Main_idle;
+	SDL_Surface* Main_idleleft;
 	SDL_Surface* Main_walk1;
 	SDL_Surface* Main_walk2;
 	SDL_Surface* Main_walk3;
 	SDL_Surface* Main_jump;
 	SDL_Surface* Background;
 	SDL_Surface* Foreground;
-	SDL_Surface* EndGame;
+	SDL_Surface* Gameover;
 	SDL_Surface* cloud1;
 	SDL_Surface* cloud2;
 	SDL_Surface* groundmedium;
