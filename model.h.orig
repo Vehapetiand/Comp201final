@@ -7,7 +7,7 @@
 enum Direction { UP, LEFT, RIGHT, DEAD, DOWN, UPR, UPL};
 
 typedef SDL_Rect Coordinate;
-
+ 
 
 
 // The model manages the state of the game
@@ -18,7 +18,7 @@ public:
     // Destructor deletes all dynamically allocated stuff
     ~Model();
     bool gameOver();
-    // Which way is the snake moving?
+    // Which way is the player moving?
     Direction direction;
     // What's the width?
     int width;
@@ -27,18 +27,28 @@ public:
 	//Coordinate for character
 	Coordinate character;
 	Coordinate floor;
+<<<<<<< HEAD
+	Coordinate cloud;
+	Coordinate raised;
+=======
 	Coordinate clouds;
 	Coordinate othercloud;
 	Coordinate raised;
 	Coordinate gameover;
+>>>>>>> 8fd5be033ea2f3d2773a29e65c94e48384145962
 	//Moves the Character left or right
 	void Walk(Direction d);
 	//Makes Character Jump
 	void Jump(Direction e);
 	void Fall();
+<<<<<<< HEAD
+	
+	
+=======
 	void Clouds();
 	bool Collision();
 
+>>>>>>> 8fd5be033ea2f3d2773a29e65c94e48384145962
 };
 
 

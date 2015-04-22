@@ -39,12 +39,19 @@ View::View(string title, int width, int height) {
     }
     // Load assets
 	Main_idle = load("assets/Main_idle.png");
+	Main_idleleft = load("assets/Main_idle_left.png");
 	Main_walk1 = load("assets/Main_walk1.png");
 	Main_walk2 = load("assets/Main_walk2.png");
 	Main_walk3 = load("assets/Main_walk3.png");
 	Main_jump = load("assets/Main_jump.png");
 	Background = load("assets/Background.png");
 	Foreground = load ("assets/Foreground.png");
+<<<<<<< HEAD
+	Gameover = load("assets/Gameover.png");
+	cloud1 = load("assets/cloud1.png");
+	cloud2 = load("assets/cloud2.png");
+	groundmedium = load("assets/groundmedium.png");
+=======
 	EndGame = load("assets/Gameover.png");
 	cloud1 = load("assets/cloud1.png");
 	cloud2 = load("assets/cloud2.png");
@@ -55,13 +62,19 @@ View::View(string title, int width, int height) {
 	Title = load("assets/name.png");
 
 
+>>>>>>> 8fd5be033ea2f3d2773a29e65c94e48384145962
 
+	
     music = Mix_LoadMUS("assets/Music.mp3");
     if (music != NULL) {
        Mix_PlayMusic( music, -1 );
     }
     
    
+    music = Mix_LoadMUS("assets/Music.mp3");
+    if (music != NULL) {
+       Mix_PlayMusic( music, -1 );
+    }
 }
 //technically 
 View::~View() {
@@ -140,6 +153,10 @@ void View::show(Model * model) {
 	SDL_Rect floor;
 	SDL_Rect sky;
 	SDL_Rect cloud;
+<<<<<<< HEAD
+	SDL_Rect cloudd;
+	SDL_Rect raised;
+=======
 	SDL_Rect smallcloud;
 	SDL_Rect sun;
 	SDL_Rect raised;
@@ -187,12 +204,19 @@ void View::show(Model * model) {
 	
 	if (model->character.x > 50)
 		frame = 1;
+>>>>>>> 8fd5be033ea2f3d2773a29e65c94e48384145962
 	
-	cloud.x = model->othercloud.x;
-	cloud.y = 120;
+	cloud.x = 0;
+	cloud.y = 20;
 	cloud.h = 82;
 	cloud.w = 141;
 	
+<<<<<<< HEAD
+	cloudd.x = 500;
+	cloudd.y = 55;
+	cloudd.h = 82;
+	cloudd.w = 141;
+=======
 	smallcloud.x = model->clouds.x;
 	smallcloud.y = 55;
 	smallcloud.h = 82;
@@ -202,7 +226,12 @@ void View::show(Model * model) {
 	raised.y = 270;
 	raised.h = 75;
 	raised.w = 110;
+>>>>>>> 8fd5be033ea2f3d2773a29e65c94e48384145962
 	
+	raised.x = 144;
+	raised.y = 270;
+	raised.h = 75;
+	raised.w = 110;
 	
 	//Clipped the sky background so its more of the middle of the picture
 	sky.x = 0;
@@ -228,8 +257,21 @@ void View::show(Model * model) {
 	SDL_BlitSurface(groundmedium,NULL,screen,&raised);
 	SDL_BlitSurface(Foreground,NULL,screen,&floor); 
 	
+<<<<<<< HEAD
+	SDL_SetColorKey(cloud1, SDL_TRUE, SDL_MapRGB(screen->format,0xff,0xff,0xff));
+	SDL_BlitSurface(cloud1, NULL,screen,&cloudd);
+	SDL_SetColorKey(cloud2, SDL_TRUE, SDL_MapRGB(screen->format,0xff,0xff,0xff));
+	SDL_BlitSurface(cloud2, NULL,screen,&cloud);
+	// Then foreground **They need to be in this order
+	SDL_BlitSurface(groundmedium,NULL,screen,&raised);
+ 	SDL_BlitSurface(Main_idle,NULL,screen,&dest); 
+	SDL_SetColorKey(Main_idle, SDL_TRUE, SDL_MapRGB(screen->format,0x00,0x00,0x00));
+	// ^^ this is the character
+	
+=======
 	SDL_SetColorKey(Thesun, SDL_TRUE, SDL_MapRGB(screen->format,0x00,0x00,0x00));
 	SDL_BlitSurface(Thesun, NULL,screen,&sun);
+>>>>>>> 8fd5be033ea2f3d2773a29e65c94e48384145962
 	
 
 	SDL_SetColorKey(cloud1, SDL_TRUE,SDL_MapRGB(screen->format,0xff,0xff,0xff));
